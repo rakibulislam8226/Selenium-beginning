@@ -21,16 +21,13 @@ def checklist():
         #     count += 1
         #     print(f"{i}. ----------{count}. >> tag: {tag.get_attribute('href')}")
 
-        # if not a_all:
-        #     print('non founds')
         card_dict = dict()
         team = a_all[-1].get_attribute("href")
         if team is not None:
             card_dict['team'] = team
         player = a_all[-2].get_attribute("href")
-        if player == None:
-            card_dict['player'] = ''
-        elif player is not None:
+        string_player = 'https://www.tcdb.com/Person.cfm/pid'
+        if string_player in player:
             card_dict['player'] = player
 
         card = a_all[2].get_attribute("href")
